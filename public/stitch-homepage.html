@@ -4,30 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT Nesto | Software, AI &amp; Digital Services | USA &amp; Global</title>
-<meta name="description" content="IT Nesto delivers web development, mobile apps, AI systems, SEO, and digital marketing for businesses across the USA, UAE, and worldwide. Book a free discovery call.">
-<meta property="og:title" content="IT Nesto | Software, AI &amp; Digital Services">
-<meta property="og:description" content="Web apps, mobile, AI agents, RAG, SEO, design, and marketing. One team for every digital need.">
+<meta name="description" content="IT Nesto delivers web development, mobile apps, AI systems, SEO, and digital marketing for businesses across the USA, UAE, and worldwide.">
 <meta property="og:image" content="/assets/itnesto-og-1200x630.jpg">
 <link rel="icon" href="/assets/itnesto-icon-512.png">
+
+<!-- Tailwind CSS — required for Stitch-generated utility classes -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'electric': '#2F54EB',
+        'electric-light': '#6B8CFF',
+        'navy': '#04091f',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Syne', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
 <style>
-/* === RESET === */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* === RESET + BASE === */
+*,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:#04091f;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#04091f}::-webkit-scrollbar-thumb{background:#2F54EB;border-radius:3px}
+body{font-family:'Inter',system-ui,sans-serif;background:#04091f;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;margin:0}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#04091f}
+::-webkit-scrollbar-thumb{background:#2F54EB;border-radius:3px}
 ::selection{background:#2F54EB;color:#fff}
 img{max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
-.material-symbols-outlined,.material-icons-outlined{font-size:inherit;vertical-align:middle}
-/* Syne for headlines */
 h1,h2,h3,.font-display{font-family:'Syne',sans-serif}
+.material-icons-outlined,.material-symbols-outlined{font-size:inherit;vertical-align:middle;line-height:1}
 
+/* === SCROLL ANIMATIONS === */
+.fade-up,.fade-in,.animate-fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.fade-up.visible,.fade-in.visible,.animate-fade-up.visible{opacity:1;transform:translateY(0)}
 
-/* === HERO === */
+/* === STITCH SECTION STYLES === */
+/* === hero === */
 body {
             background-color: #04091f;
             color: #ffffff;
@@ -79,8 +105,7 @@ body {
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
-
-/* === SERVICES === */
+/* === services === */
 .glass-card {
             background: rgba(4, 9, 31, 0.4);
             backdrop-filter: blur(12px);
@@ -93,8 +118,7 @@ body {
             box-shadow: 0 0 20px rgba(47, 84, 235, 0.1);
             transform: translateY(-5px);
         }
-
-/* === PROCESS === */
+/* === process === */
 .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
@@ -116,8 +140,7 @@ body {
                 transform: scale(1.5);
             }
         }
-
-/* === GLOBAL === */
+/* === global === */
 body {
             background-color: #04091f;
             color: #ffffff;
@@ -136,8 +159,7 @@ body {
         .text-glow {
             text-shadow: 0 0 10px rgba(47, 84, 235, 0.5);
         }
-
-/* === CONTACT === */
+/* === contact === */
 .halo-glow {
             background: radial-gradient(circle at 50% 50%, rgba(47, 84, 235, 0.15) 0%, rgba(2, 7, 20, 0) 60%);
         }
@@ -151,6 +173,7 @@ body {
 </head>
 <body>
 
+
 <!-- === HERO === -->
 <!-- Grid Background & Glow -->
 <div class="fixed inset-0 bg-grid z-[-2]"></div>
@@ -160,7 +183,7 @@ body {
 <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
 <!-- Logo -->
 <a class="flex items-center gap-3 scale-95 active:scale-90 transition-transform" href="#">
-<img alt="IT Nesto Logo" class="h-10 w-auto object-contain" data-alt="IT Nesto brand logo featuring a bright electric blue rounded square icon with a geometric N inside, followed by the wordmark IT Nesto in matching electric blue typography, set against a dark background." src="https://lh3.googleusercontent.com/aida/AP1WRLvr8BwinXa9cRjwpSiw36RaLP2KXBuAnH91-IKPBPcqP-l1Vk2rKmru-H_9D_NuxuDPcVnbkIf09V_BLHIPaE1rWMLqO16wG8rYP-4-oj_OjFXkIRNjrhnlXAhX88WR6HWn0RfYHvEB1a1TCGlm3C3toODDadvPqIHmTGB8Xxo_6zo4BueBWXPoHoZSj6XxvYeHC3tn5zgJZv84kCGxOl_mJz5QJiuDCZPMCuUdT2MaZxrpBGmZtJGa9w"/>
+<img alt="IT Nesto Logo" class="h-10 w-auto object-contain" data-alt="IT Nesto brand logo featuring a bright electric blue rounded square icon with a geometric N inside, followed by the wordmark IT Nesto in matching electric blue typography, set against a dark background." src="/assets/itnesto-icon-512.png"/>
 </a>
 <!-- Links (Hidden on mobile for now per responsive spec) -->
 <div class="hidden md:flex items-center space-x-8">
@@ -222,7 +245,7 @@ body {
 <!-- Decorative background elements for image -->
 <div class="absolute inset-0 bg-gradient-radial from-[#2F54EB]/20 to-transparent blur-3xl rounded-full opacity-50"></div>
 <div class="relative w-full max-w-lg animate-float">
-<img alt="Interconnected tech nodes" class="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(47,84,235,0.4)] filter contrast-125 saturate-150" data-alt="A striking 3D digital illustration featuring floating, interconnected hexagonal geometric nodes made of translucent glass and bright electric blue glowing edges. Circuit board traces run across the facets. The structures hover against a deep, dark navy blue background, exuding a highly advanced, premium technology aesthetic. High-key soft internal lighting creates a modern, sophisticated mood." src="https://lh3.googleusercontent.com/aida/AP1WRLsByl2eUCvPC2zgnC6G4CexwP0U1fGGv7oxF8ec99i0rkK7ykpgRKBK9AohDLTzWdNy1NTJiQeeVlqnZqqnW908OepeDH4eBmlgs-JTO0DugSjbdwu58crAnftInR7HeMJ02R549FKByBSuG9M2VAkFvWw2JiTLB-daJzcA9N4bGId95-hIu73YgNKmR9Celj4B25gsAp_AADKxjTkWr22JKWK2S3X6fYbzWkR6pfFCrIQ477kLpc-MOA"/>
+<img alt="Interconnected tech nodes" class="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(47,84,235,0.4)] filter contrast-125 saturate-150" data-alt="A striking 3D digital illustration featuring floating, interconnected hexagonal geometric nodes made of translucent glass and bright electric blue glowing edges. Circuit board traces run across the facets. The structures hover against a deep, dark navy blue background, exuding a highly advanced, premium technology aesthetic. High-key soft internal lighting creates a modern, sophisticated mood." src="/assets/itnesto-icon-512.png"/>
 </div>
 </div>
 </div>
@@ -867,9 +890,9 @@ body {
 <a class="text-slate-500 font-body text-sm hover:text-[#2F54EB] transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
 </div>
 </footer>
-<script>
 
-/* === HERO === */
+<script>
+// hero
 tailwind.config = {
             darkMode: "class",
             theme: {
@@ -893,8 +916,7 @@ tailwind.config = {
                 },
             },
         }
-
-/* === SERVICES === */
+// services
 tailwind.config = {
             darkMode: "class",
             theme: {
@@ -913,8 +935,7 @@ tailwind.config = {
                 },
             },
         }
-
-/* === PROCESS === */
+// process
 tailwind.config = {
             darkMode: "class",
             theme: {
@@ -940,8 +961,7 @@ tailwind.config = {
                 }
             }
         }
-
-/* === GLOBAL === */
+// global
 tailwind.config = {
             darkMode: "class",
             theme: {
@@ -968,8 +988,7 @@ tailwind.config = {
                 }
             }
         }
-
-/* === CONTACT === */
+// contact
 tailwind.config = {
             darkMode: "class",
             theme: {
@@ -996,33 +1015,22 @@ tailwind.config = {
             },
         }
 
-// Unified scroll observer
+// Scroll observer
 const __obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.classList.add('visible','animate-in');
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-    }
+    if(e.isIntersecting) e.target.classList.add('visible');
   });
 }, {threshold:0.06, rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up,.fade-in,.animate-fade-up,[data-animate]').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  __obs.observe(el);
-});
+document.querySelectorAll('.fade-up,.fade-in,.animate-fade-up').forEach(el => __obs.observe(el));
 
-// Navbar scroll effect
-const __nav = document.querySelector('nav.fixed, nav[class*="fixed"]');
+// Navbar scroll glass effect
+const __nav = document.querySelector('nav.fixed');
 if(__nav) {
   window.addEventListener('scroll', () => {
     if(window.scrollY > 30) {
-      __nav.style.background = 'rgba(4,9,31,0.92)';
-      __nav.style.backdropFilter = 'blur(20px)';
-      __nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+      __nav.style.backdropFilter = 'blur(24px)';
+      __nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
     } else {
-      __nav.style.background = '';
       __nav.style.backdropFilter = '';
       __nav.style.boxShadow = '';
     }
@@ -1033,8 +1041,8 @@ if(__nav) {
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
   });
 });
 </script>

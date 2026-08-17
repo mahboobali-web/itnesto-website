@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   },
 }
 
-const styles = `/* hero */
+const allStyles = `/* === hero === */
 body {
             background-color: #04091f;
             color: #ffffff;
@@ -62,7 +63,7 @@ body {
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
-/* services */
+/* === services === */
 .glass-card {
             background: rgba(4, 9, 31, 0.4);
             backdrop-filter: blur(12px);
@@ -75,7 +76,7 @@ body {
             box-shadow: 0 0 20px rgba(47, 84, 235, 0.1);
             transform: translateY(-5px);
         }
-/* process */
+/* === process === */
 .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
@@ -97,7 +98,7 @@ body {
                 transform: scale(1.5);
             }
         }
-/* global */
+/* === global === */
 body {
             background-color: #04091f;
             color: #ffffff;
@@ -116,7 +117,7 @@ body {
         .text-glow {
             text-shadow: 0 0 10px rgba(47, 84, 235, 0.5);
         }
-/* contact */
+/* === contact === */
 .halo-glow {
             background: radial-gradient(circle at 50% 50%, rgba(47, 84, 235, 0.15) 0%, rgba(2, 7, 20, 0) 60%);
         }
@@ -127,7 +128,8 @@ body {
             background-clip: text;
         }`
 
-const bodyHTML = `<!-- hero -->
+const allBodies = `
+<!-- === HERO === -->
 <!-- Grid Background & Glow -->
 <div class="fixed inset-0 bg-grid z-[-2]"></div>
 <div class="ambient-glow"></div>
@@ -149,7 +151,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Action -->
 <button class="bg-[#2F54EB] text-white font-body text-sm font-medium px-6 py-2.5 rounded-lg shadow-[0_0_15px_rgba(47,84,235,0.4)] hover:shadow-[0_0_25px_rgba(47,84,235,0.6)] hover:bg-blue-600 transition-all duration-300 scale-95 active:scale-90 flex items-center gap-2">
                 Book a call
-                <span class="material-icons-outlined text-[18px]">arrow_forward</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </button>
 </div>
 </nav>
@@ -177,7 +179,7 @@ const bodyHTML = `<!-- hero -->
 <div class="flex flex-col sm:flex-row items-center gap-4 mb-12 w-full sm:w-auto">
 <a class="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#2F54EB] text-white font-body font-medium px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(47,84,235,0.4)] hover:shadow-[0_0_35px_rgba(47,84,235,0.6)] hover:-translate-y-1 transition-all duration-300" href="#">
                         Book a Free Discovery Call
-                        <span class="material-icons-outlined text-[20px]">arrow_forward</span>
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
 </a>
 <a class="w-full sm:w-auto flex items-center justify-center gap-2 glass-card hover:bg-white/10 text-white font-body font-medium px-8 py-4 rounded-xl transition-all duration-300" href="#">
                         Explore Services
@@ -210,7 +212,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Stat 1 -->
 <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors">
 <div class="w-10 h-10 rounded-lg bg-[#2F54EB]/20 flex items-center justify-center text-[#2F54EB]">
-<span class="material-icons-outlined">layers</span>
+<span class="material-symbols-outlined">layers</span>
 </div>
 <div>
 <div class="font-headline font-bold text-xl text-white">12+</div>
@@ -220,7 +222,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Stat 2 -->
 <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors">
 <div class="w-10 h-10 rounded-lg bg-[#2F54EB]/20 flex items-center justify-center text-[#2F54EB]">
-<span class="material-icons-outlined">timer</span>
+<span class="material-symbols-outlined">timer</span>
 </div>
 <div>
 <div class="font-headline font-bold text-xl text-white">48hr</div>
@@ -230,7 +232,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Stat 3 -->
 <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors">
 <div class="w-10 h-10 rounded-lg bg-[#2F54EB]/20 flex items-center justify-center text-[#2F54EB]">
-<span class="material-icons-outlined">rocket_launch</span>
+<span class="material-symbols-outlined">rocket_launch</span>
 </div>
 <div>
 <div class="font-headline font-bold text-xl text-white">2 wks</div>
@@ -240,7 +242,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Stat 4 -->
 <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors">
 <div class="w-10 h-10 rounded-lg bg-[#2F54EB]/20 flex items-center justify-center text-[#2F54EB]">
-<span class="material-icons-outlined">verified_user</span>
+<span class="material-symbols-outlined">verified_user</span>
 </div>
 <div>
 <div class="font-headline font-bold text-xl text-white">100%</div>
@@ -250,7 +252,8 @@ const bodyHTML = `<!-- hero -->
 </div>
 </div>
 </div>
-<!-- services -->
+
+<!-- === SERVICES === -->
 <!-- Top Navigation Placeholder (following JSON structure) -->
 <nav class="fixed top-0 w-full bg-[#04091f]/80 backdrop-blur-md border-b border-white/10 shadow-[0_0_20px_rgba(47,84,235,0.1)] z-50">
 <div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
@@ -263,7 +266,7 @@ const bodyHTML = `<!-- hero -->
 <a class="text-white/70 hover:text-white transition-colors hover:bg-white/5 duration-300" href="#">Insights</a>
 </div>
 <div class="flex items-center space-x-4">
-<span class="material-icons-outlined text-white/70 cursor-pointer hover:text-white transition-colors">search</span>
+<span class="material-symbols-outlined text-white/70 cursor-pointer hover:text-white transition-colors">search</span>
 <button class="bg-primary text-white px-6 py-2 rounded-full font-medium active:scale-95 duration-200 hover:bg-primary/90 transition-colors shadow-[0_0_15px_rgba(47,84,235,0.4)]">Get Started</button>
 </div>
 </div>
@@ -286,7 +289,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">language</span>
+<span class="material-symbols-outlined">language</span>
 </div>
 <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-1 bg-primary/20 text-blue-300 rounded border border-primary/30">Most Popular</span>
 </div>
@@ -298,7 +301,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">smartphone</span>
+<span class="material-symbols-outlined">smartphone</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">iOS &amp; Android Apps</h3>
@@ -309,7 +312,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">psychology</span>
+<span class="material-symbols-outlined">psychology</span>
 </div>
 <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-1 bg-purple-500/20 text-purple-300 rounded border border-purple-500/30">High Demand</span>
 </div>
@@ -321,7 +324,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-pink-500/10 rounded-full blur-xl group-hover:bg-pink-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 border border-pink-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">smart_toy</span>
+<span class="material-symbols-outlined">smart_toy</span>
 </div>
 <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-1 bg-pink-500/20 text-pink-300 rounded border border-pink-500/30">High Demand</span>
 </div>
@@ -333,7 +336,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-orange-500/10 rounded-full blur-xl group-hover:bg-orange-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 border border-orange-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">database</span>
+<span class="material-symbols-outlined">database</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">RAG Systems</h3>
@@ -344,7 +347,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl group-hover:bg-cyan-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">api</span>
+<span class="material-symbols-outlined">api</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">API Development</h3>
@@ -355,7 +358,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 border border-amber-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">trending_up</span>
+<span class="material-symbols-outlined">trending_up</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">SEO Optimization</h3>
@@ -366,7 +369,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-rose-500/10 rounded-full blur-xl group-hover:bg-rose-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 border border-rose-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">palette</span>
+<span class="material-symbols-outlined">palette</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">Graphic Design</h3>
@@ -377,7 +380,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">campaign</span>
+<span class="material-symbols-outlined">campaign</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">Digital Marketing</h3>
@@ -388,7 +391,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-teal-500/10 rounded-full blur-xl group-hover:bg-teal-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400 border border-teal-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">edit_document</span>
+<span class="material-symbols-outlined">edit_document</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">Content Writing</h3>
@@ -399,7 +402,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-sky-500/10 rounded-full blur-xl group-hover:bg-sky-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 border border-sky-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">cloud_sync</span>
+<span class="material-symbols-outlined">cloud_sync</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">Cloud DevOps</h3>
@@ -410,7 +413,7 @@ const bodyHTML = `<!-- hero -->
 <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 bg-slate-500/10 rounded-full blur-xl group-hover:bg-slate-500/20 transition-all duration-500"></div>
 <div class="flex justify-between items-start mb-6">
 <div class="w-12 h-12 rounded-lg bg-slate-500/10 flex items-center justify-center text-slate-400 border border-slate-500/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-icons-outlined">support_agent</span>
+<span class="material-symbols-outlined">support_agent</span>
 </div>
 </div>
 <h3 class="text-xl font-display font-semibold text-white mb-3">IT Consulting</h3>
@@ -433,7 +436,8 @@ const bodyHTML = `<!-- hero -->
 </div>
 </div>
 </footer>
-<!-- process -->
+
+<!-- === PROCESS === -->
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#04091f]/80 backdrop-blur-md border-b border-white/10 shadow-[0_0_20px_rgba(47,84,235,0.1)]">
 <div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
@@ -449,7 +453,7 @@ const bodyHTML = `<!-- hero -->
 </div>
 <div class="flex items-center space-x-4">
 <button class="text-white hover:text-primary transition-colors">
-<span class="material-icons-outlined">search</span>
+<span class="material-symbols-outlined">search</span>
 </button>
 <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 active:scale-95">
                     Get Started
@@ -576,17 +580,17 @@ const bodyHTML = `<!-- hero -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!-- Commitment 1 -->
 <div class="glass-card p-6 rounded-xl flex items-center space-x-4 border-l-4 border-l-[#10B981] hover:bg-surface-hover transition-colors">
-<span class="material-icons-outlined text-[#10B981] text-2xl">check_circle</span>
+<span class="material-symbols-outlined text-[#10B981] text-2xl">check_circle</span>
 <h4 class="font-headline font-semibold text-white">Written spec first</h4>
 </div>
 <!-- Commitment 2 -->
 <div class="glass-card p-6 rounded-xl flex items-center space-x-4 border-l-4 border-l-[#10B981] hover:bg-surface-hover transition-colors">
-<span class="material-icons-outlined text-[#10B981] text-2xl">check_circle</span>
+<span class="material-symbols-outlined text-[#10B981] text-2xl">check_circle</span>
 <h4 class="font-headline font-semibold text-white">IP fully yours</h4>
 </div>
 <!-- Commitment 3 -->
 <div class="glass-card p-6 rounded-xl flex items-center space-x-4 border-l-4 border-l-[#10B981] hover:bg-surface-hover transition-colors">
-<span class="material-icons-outlined text-[#10B981] text-2xl">check_circle</span>
+<span class="material-symbols-outlined text-[#10B981] text-2xl">check_circle</span>
 <h4 class="font-headline font-semibold text-white">30-day post-launch support</h4>
 </div>
 </div>
@@ -609,7 +613,8 @@ const bodyHTML = `<!-- hero -->
             </div>
 </div>
 </footer>
-<!-- global -->
+
+<!-- === GLOBAL === -->
 <!-- Top Navigation (Shared Component JSON) -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#04091f]/80 backdrop-blur-md border-b border-white/10 shadow-[0_0_20px_rgba(47,84,235,0.15)]">
 <div class="text-2xl font-black tracking-tight text-white font-headline">IT Nesto</div>
@@ -650,7 +655,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Card 1 -->
 <div class="glass-card rounded-xl p-6 transition-all duration-300 group">
 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors border border-primary/20">
-<span class="material-icons-outlined text-primary text-2xl">translate</span>
+<span class="material-symbols-outlined text-primary text-2xl">translate</span>
 </div>
 <h3 class="font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">Arabic RTL</h3>
 <p class="font-body text-sm text-slate-400">Native Right-to-Left layout support for Middle Eastern markets.</p>
@@ -658,7 +663,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Card 2 -->
 <div class="glass-card rounded-xl p-6 transition-all duration-300 group">
 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors border border-primary/20">
-<span class="material-icons-outlined text-primary text-2xl">account_balance</span>
+<span class="material-symbols-outlined text-primary text-2xl">account_balance</span>
 </div>
 <h3 class="font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">UAE Payments</h3>
 <p class="font-body text-sm text-slate-400">Integrated regional payment gateways and compliance standard.</p>
@@ -666,7 +671,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Card 3 -->
 <div class="glass-card rounded-xl p-6 transition-all duration-300 group">
 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors border border-primary/20">
-<span class="material-icons-outlined text-primary text-2xl">gavel</span>
+<span class="material-symbols-outlined text-primary text-2xl">gavel</span>
 </div>
 <h3 class="font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">PDPL Compliance</h3>
 <p class="font-body text-sm text-slate-400">Strict adherence to Personal Data Protection Laws across regions.</p>
@@ -674,7 +679,7 @@ const bodyHTML = `<!-- hero -->
 <!-- Card 4 -->
 <div class="glass-card rounded-xl p-6 transition-all duration-300 group">
 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors border border-primary/20">
-<span class="material-icons-outlined text-primary text-2xl">architecture</span>
+<span class="material-symbols-outlined text-primary text-2xl">architecture</span>
 </div>
 <h3 class="font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">USA Frameworks</h3>
 <p class="font-body text-sm text-slate-400">Built on robust, scalable American architectural standards.</p>
@@ -704,7 +709,7 @@ const bodyHTML = `<!-- hero -->
 <div class="bg-brand-navy border border-white/5 rounded-xl p-6 relative overflow-hidden group">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="relative z-10 flex flex-col justify-between h-full">
-<span class="material-icons-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">payments</span>
+<span class="material-symbols-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">payments</span>
 <div>
 <h4 class="font-headline font-bold text-3xl md:text-4xl text-white mb-1 tracking-tight">$5k</h4>
 <p class="font-label text-primary font-medium text-sm uppercase tracking-wider">Minimum</p>
@@ -714,7 +719,7 @@ const bodyHTML = `<!-- hero -->
 <div class="bg-brand-navy border border-white/5 rounded-xl p-6 relative overflow-hidden group">
 <div class="absolute inset-0 bg-gradient-to-bl from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="relative z-10 flex flex-col justify-between h-full">
-<span class="material-icons-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">schedule</span>
+<span class="material-symbols-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">schedule</span>
 <div>
 <h4 class="font-headline font-bold text-3xl md:text-4xl text-white mb-1 tracking-tight">48hr</h4>
 <p class="font-label text-primary font-medium text-sm uppercase tracking-wider">Proposal</p>
@@ -724,7 +729,7 @@ const bodyHTML = `<!-- hero -->
 <div class="bg-brand-navy border border-white/5 rounded-xl p-6 relative overflow-hidden group">
 <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="relative z-10 flex flex-col justify-between h-full">
-<span class="material-icons-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">rocket_launch</span>
+<span class="material-symbols-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">rocket_launch</span>
 <div>
 <h4 class="font-headline font-bold text-3xl md:text-4xl text-white mb-1 tracking-tight">2wks</h4>
 <p class="font-label text-primary font-medium text-sm uppercase tracking-wider">Start Time</p>
@@ -734,7 +739,7 @@ const bodyHTML = `<!-- hero -->
 <div class="bg-brand-navy border border-white/5 rounded-xl p-6 relative overflow-hidden group">
 <div class="absolute inset-0 bg-gradient-to-tl from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="relative z-10 flex flex-col justify-between h-full">
-<span class="material-icons-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">verified_user</span>
+<span class="material-symbols-outlined text-slate-600 mb-6 group-hover:text-primary/50 transition-colors">verified_user</span>
 <div>
 <h4 class="font-headline font-bold text-3xl md:text-4xl text-white mb-1 tracking-tight text-glow">100%</h4>
 <p class="font-label text-primary font-medium text-sm uppercase tracking-wider">IP Ownership</p>
@@ -758,7 +763,8 @@ const bodyHTML = `<!-- hero -->
             © 2024 IT Nesto. Authority meets modernity.
         </div>
 </footer>
-<!-- contact -->
+
+<!-- === CONTACT === -->
 <!-- TopNavBar (Semantic Shell - Destination/Main Page) -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#04091f]/80 backdrop-blur-md border-b border-white/10 shadow-[0_0_20px_rgba(47,84,235,0.15)]">
 <div class="flex items-center">
@@ -801,7 +807,7 @@ const bodyHTML = `<!-- hero -->
 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 w-full">
 <button class="w-full sm:w-auto bg-[#2F54EB] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-light transition-all shadow-[0_0_30px_rgba(47,84,235,0.4)] hover:shadow-[0_0_40px_rgba(47,84,235,0.6)] flex items-center justify-center gap-2 group active:scale-95">
                     Book a Free Discovery Call
-                    <span class="material-icons-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
 </button>
 <button class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2 active:scale-95">
                     Email us directly
@@ -810,17 +816,17 @@ const bodyHTML = `<!-- hero -->
 <!-- Contact Row -->
 <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-slate-400 font-medium">
 <div class="flex items-center gap-2">
-<span class="material-icons-outlined text-lg opacity-80" data-weight="fill">mail</span>
+<span class="material-symbols-outlined text-lg opacity-80" data-weight="fill">mail</span>
 <span>hello@itnesto.com</span>
 </div>
 <div class="hidden md:block w-1 h-1 rounded-full bg-slate-600"></div>
 <div class="flex items-center gap-2">
-<span class="material-icons-outlined text-lg opacity-80">public</span>
+<span class="material-symbols-outlined text-lg opacity-80">public</span>
 <span>USA registered</span>
 </div>
 <div class="hidden md:block w-1 h-1 rounded-full bg-slate-600"></div>
 <div class="flex items-center gap-2">
-<span class="material-icons-outlined text-lg opacity-80">language</span>
+<span class="material-symbols-outlined text-lg opacity-80">language</span>
 <span>Serving clients worldwide</span>
 </div>
 </div>
@@ -840,7 +846,7 @@ const bodyHTML = `<!-- hero -->
 </div>
 </footer>`
 
-const clientScript = `// hero
+const allScripts = `// hero
 tailwind.config = {
             darkMode: "class",
             theme: {
@@ -963,28 +969,53 @@ tailwind.config = {
             },
         }
 // Scroll observer
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){e.target.classList.add('visible');e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+const __obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.06, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up,.fade-in,.animate-fade-up').forEach(el => __obs.observe(el));
+const __nav = document.querySelector('nav.fixed');
+if(__nav) {
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 30) { __nav.style.backdropFilter='blur(24px)'; __nav.style.boxShadow='0 4px 30px rgba(0,0,0,0.5)'; }
+    else { __nav.style.backdropFilter=''; __nav.style.boxShadow=''; }
+  }, {passive:true});
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
   });
-},{threshold:0.06,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up,.fade-in,.animate-fade-up').forEach(el=>{
-  el.style.opacity='0';el.style.transform='translateY(20px)';
-  el.style.transition='opacity 0.6s ease,transform 0.6s ease';obs.observe(el);
 });
-// Navbar
-const nav=document.querySelector('nav.fixed');
-if(nav){window.addEventListener('scroll',()=>{if(window.scrollY>30){nav.style.background='rgba(4,9,31,0.92)';nav.style.backdropFilter='blur(20px)';nav.style.boxShadow='0 4px 30px rgba(0,0,0,0.4)';}else{nav.style.background='';nav.style.backdropFilter='';nav.style.boxShadow='';}},{passive:true});}
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
 `
 
 export default function Home() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: styles }} />
-      <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
-      <script dangerouslySetInnerHTML={{ __html: clientScript }} />
+      {/* Tailwind CSS — required for Stitch-generated utility classes */}
+      <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
+      <Script id="tw-config" strategy="beforeInteractive">{`
+        if(typeof tailwind !== 'undefined') {
+          tailwind.config = {
+            theme: { extend: { colors: { electric: '#2F54EB' }, fontFamily: { display: ['Syne'] } } }
+          }
+        }
+      `}</Script>
+      <style dangerouslySetInnerHTML={{ __html: `
+        *,*::before,*::after{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,sans-serif;background:#04091f;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;margin:0}
+        ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#04091f}::-webkit-scrollbar-thumb{background:#2F54EB;border-radius:3px}
+        ::selection{background:#2F54EB;color:#fff}
+        img{max-width:100%;height:auto}a{text-decoration:none;color:inherit}
+        h1,h2,h3{font-family:'Syne',sans-serif}
+        .material-icons-outlined,.material-symbols-outlined{font-size:inherit;vertical-align:middle;line-height:1}
+        .fade-up,.fade-in,.animate-fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+        .fade-up.visible,.fade-in.visible,.animate-fade-up.visible{opacity:1;transform:translateY(0)}
+        ${allStyles}
+      ` }} />
+      <div dangerouslySetInnerHTML={{ __html: allBodies }} />
+      <Script id="page-scripts" strategy="afterInteractive">{allScripts}</Script>
     </>
   )
 }
