@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: [],
-    formats: ['image/avif', 'image/webp'],
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/itnesto.html',
+        permanent: false,
+      },
+    ]
   },
 }
 module.exports = nextConfig
