@@ -18,7 +18,7 @@ export default function CaseStudies() {
               <span className="text-xs font-medium text-[#6B8CFF] uppercase tracking-widest">Our work</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight">
-              Work we've<br /><span className="gradient-text-blue">shipped</span>
+              Work we&apos;ve<br /><span className="gradient-text-blue">shipped</span>
             </h2>
           </div>
           <p className="text-[#8BA3E0] max-w-sm md:text-right">

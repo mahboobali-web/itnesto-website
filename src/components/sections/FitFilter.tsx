@@ -24,7 +24,7 @@ export default function FitFilter() {
           </div>
           <h2 className="text-4xl sm:text-5xl font-black text-white">Is IT Nesto<br />the right fit?</h2>
           <p className="text-[#8BA3E0] mt-3 max-w-lg">
-            We include this section because a bad-fit project wastes everyone's time. If you see yourself in the "not a fit" column, we will tell you that on the first call.
+            We include this section because a bad-fit project wastes time on both sides. If you see yourself in the not-a-fit column, we will say so on the first call.apos;s time. If you see yourself in the everyone's time. If you see yourself in the "not a fit" column, we will tell you that on the first call.quot;not a fiteveryone's time. If you see yourself in the "not a fit" column, we will tell you that on the first call.quot; column, we will tell you that on the first call.
           </p>
         </div>
 
