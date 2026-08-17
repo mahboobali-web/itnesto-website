@@ -1,37 +1,64 @@
 const placeholders = [
-  { sector: 'Fintech', region: 'USA', desc: 'Case study coming soon' },
-  { sector: 'E-commerce', region: 'UAE', desc: 'Case study coming soon' },
-  { sector: 'Healthcare', region: 'Middle East', desc: 'Case study coming soon' },
-  { sector: 'SaaS', region: 'Global', desc: 'Case study coming soon' },
+  { sector: 'Fintech', region: 'USA', metrics: ['Revenue impact', 'Time to launch', 'Uptime SLA', 'User growth'] },
+  { sector: 'E-commerce', region: 'UAE', metrics: ['Conversion rate', 'Page load time', 'Mobile orders', 'SKUs migrated'] },
+  { sector: 'Healthcare', region: 'Middle East', metrics: ['Patients served', 'System uptime', 'HIPAA compliant', 'Cost saved'] },
+  { sector: 'SaaS', region: 'Global', metrics: ['MRR growth', 'API response', 'Team size', 'Deployment time'] },
 ]
 
 export default function CaseStudies() {
   return (
-    <section id="work" className="section-white py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-14">
-          <span className="text-xs font-medium text-electric-500 uppercase tracking-widest">Our work</span>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-navy-900 mt-2">Work we have shipped</h2>
-          <p className="text-navy-700 mt-3 max-w-lg text-sm">
-            Case studies are published as projects complete. Real numbers only — no projected or unverified claims.
+    <section id="work" className="relative py-24 md:py-32 overflow-hidden" style={{background:'#020714'}}>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2F54EB]/30 to-transparent" />
+      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full bg-[#2F54EB]/5 blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 fade-up">
+          <div>
+            <div className="inline-flex items-center gap-2 glass-blue rounded-full px-4 py-2 mb-6">
+              <span className="text-xs font-medium text-[#6B8CFF] uppercase tracking-widest">Our work</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight">
+              Work we've<br /><span className="gradient-text-blue">shipped</span>
+            </h2>
+          </div>
+          <p className="text-[#8BA3E0] max-w-sm md:text-right">
+            Case studies publish as projects complete. Real numbers only. No projected or estimated figures.
           </p>
         </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {placeholders.map(c => (
-            <div key={c.sector + c.region} className="rounded-xl border-2 border-dashed border-electric-100 bg-electric-50/50 p-8 flex flex-col gap-3">
-              <div className="flex gap-2">
-                <span className="text-xs font-semibold bg-electric-100 text-electric-600 px-3 py-1 rounded-full">{c.sector}</span>
-                <span className="text-xs font-semibold bg-navy-900/10 text-navy-700 px-3 py-1 rounded-full">{c.region}</span>
+          {placeholders.map((c, i) => (
+            <div
+              key={c.sector}
+              className={`fade-up fade-up-delay-${i + 1} group relative glass rounded-2xl p-7 border border-white/[0.07] hover:border-[#2F54EB]/30 transition-all duration-500 hover:-translate-y-1 card-glow overflow-hidden`}
+            >
+              {/* Background gradient */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{background: 'radial-gradient(circle at 80% 20%, rgba(47,84,235,0.08) 0%, transparent 60%)'}}
+              />
+
+              {/* Tags */}
+              <div className="flex gap-2 mb-5 relative z-10">
+                <span className="tag-chip">{c.sector}</span>
+                <span className="tag-chip">{c.region}</span>
+                <span className="ml-auto text-xs text-[#8BA3E0] italic">Coming soon</span>
               </div>
-              <div className="grid grid-cols-2 gap-3 mt-2">
-                {['Metric 1', 'Metric 2', 'Metric 3', 'Metric 4'].map(m => (
-                  <div key={m} className="bg-white rounded-lg p-3 border border-electric-100">
-                    <div className="text-xl font-semibold text-navy-900/20">—</div>
-                    <div className="text-xs text-navy-700/50 mt-1">{m}</div>
+
+              {/* Stat boxes */}
+              <div className="grid grid-cols-2 gap-3 relative z-10">
+                {c.metrics.map(m => (
+                  <div key={m} className="rounded-xl border border-white/[0.06] p-4" style={{background:'rgba(47,84,235,0.05)'}}>
+                    <div className="text-2xl font-bold text-white/20 mb-1">—</div>
+                    <div className="text-xs text-[#8BA3E0]">{m}</div>
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-navy-700/60 italic mt-1">Publishing soon</p>
+
+              {/* Dashed border overlay hint */}
+              <div className="mt-5 flex items-center gap-2 relative z-10">
+                <div className="flex-1 h-px bg-gradient-to-r from-[#2F54EB]/30 to-transparent" />
+                <span className="text-xs text-[#2F54EB]/60 font-medium">Publishing soon</span>
+              </div>
             </div>
           ))}
         </div>

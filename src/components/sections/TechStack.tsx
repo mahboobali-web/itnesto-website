@@ -1,41 +1,49 @@
-const stack = [
-  { cat: 'Frontend', tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js'] },
-  { cat: 'Mobile', tools: ['React Native', 'Swift', 'Kotlin', 'Flutter'] },
-  { cat: 'Backend', tools: ['Node.js', 'Python', 'FastAPI', 'Django', 'Go'] },
-  { cat: 'AI / ML', tools: ['LangChain', 'LlamaIndex', 'OpenAI API', 'Anthropic API', 'CrewAI'] },
-  { cat: 'Vector DB', tools: ['Pinecone', 'Weaviate', 'pgvector', 'Qdrant'] },
-  { cat: 'Cloud', tools: ['AWS', 'Azure', 'GCP'] },
-  { cat: 'DevOps', tools: ['Kubernetes', 'Docker', 'Terraform', 'GitHub Actions'] },
-  { cat: 'Database', tools: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'] },
-  { cat: 'Design', tools: ['Figma', 'Adobe Illustrator', 'Photoshop'] },
-  { cat: 'Marketing', tools: ['Google Ads', 'Meta Ads', 'Ahrefs', 'SEMrush'] },
+const tracks = [
+  ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js', 'React Native', 'Swift', 'Kotlin', 'Flutter', 'Node.js', 'Python', 'FastAPI'],
+  ['LangChain', 'LlamaIndex', 'OpenAI API', 'Anthropic API', 'CrewAI', 'AutoGen', 'Pinecone', 'Weaviate', 'pgvector', 'AWS', 'Azure', 'GCP'],
+  ['Kubernetes', 'Docker', 'Terraform', 'GitHub Actions', 'Datadog', 'PostgreSQL', 'MongoDB', 'Redis', 'Figma', 'Google Ads', 'Meta Ads', 'Ahrefs'],
 ]
 
 export default function TechStack() {
   return (
-    <section className="section-white py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-12">
-          <span className="text-xs font-medium text-electric-500 uppercase tracking-widest">Tech stack</span>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-navy-900 mt-2">Tools we ship with</h2>
-          <p className="text-navy-700 mt-3 max-w-lg text-sm">
-            We do not list 60 technologies. These are the tools we have shipped production systems with.
+    <section className="relative py-20 overflow-hidden section-dark">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 fade-up">
+          <div>
+            <div className="text-xs font-medium text-[#6B8CFF] uppercase tracking-widest mb-3">Tech stack</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              Tools we ship<br />production systems with
+            </h2>
+          </div>
+          <p className="text-[#8BA3E0] text-sm max-w-xs">
+            We do not list 60 technologies. Every tool here has shipped in a real production environment.
           </p>
         </div>
-        <div className="space-y-5">
-          {stack.map(s => (
-            <div key={s.cat} className="flex flex-col sm:flex-row sm:items-center gap-3">
-              <span className="text-xs font-semibold text-navy-700 uppercase tracking-wider w-28 shrink-0">{s.cat}</span>
-              <div className="flex flex-wrap gap-2">
-                {s.tools.map(t => (
-                  <span key={t} className="text-xs font-medium bg-electric-50 text-electric-600 border border-electric-100 px-3 py-1 rounded-full">
-                    {t}
-                  </span>
-                ))}
-              </div>
+      </div>
+
+      {/* Marquee rows */}
+      <div className="space-y-3 overflow-hidden">
+        {tracks.map((track, ti) => (
+          <div key={ti} className="relative">
+            <div
+              className="marquee-track"
+              style={{ animationDirection: ti % 2 === 0 ? 'normal' : 'reverse', animationDuration: `${25 + ti * 5}s` }}
+            >
+              {[...track, ...track].map((t, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 mx-2 glass text-[#a0b4ff] text-sm font-medium px-4 py-2.5 rounded-full whitespace-nowrap hover:bg-white/[0.08] hover:text-white cursor-default transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2F54EB]" />
+                  {t}
+                </span>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )
