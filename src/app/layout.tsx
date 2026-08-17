@@ -10,8 +10,16 @@ export const metadata: Metadata = {
     description: 'Web apps, mobile, AI agents, RAG, SEO, design, and marketing. One team for every digital need. Free 45-min discovery call.',
     type: 'website',
     url: 'https://itnesto.com',
+    images: [{ url: '/assets/itnesto-og-1200x630.jpg', width: 1200, height: 630, alt: 'IT Nesto' }],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/assets/itnesto-og-1200x630.jpg'],
+  },
+  icons: {
+    icon: '/assets/itnesto-icon-512.png',
+    apple: '/assets/itnesto-icon-512.png',
+  },
   robots: 'index, follow',
 }
 
